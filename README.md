@@ -24,7 +24,7 @@ Simple and extremely easy tags input for anything that runs on browser 🌐 🚀
     </div>
 
     <!--Simple tags input plugin-->
-     <script src="path/to/simple.tagslist.min.js"></script>
+     <script src="path/to/simple-tag-input.min.js"></script>
      <!--Simple tags input implementation-->
      <script>
          let options = { inputEl: "tagsInput", listEl: "tagsList"};
