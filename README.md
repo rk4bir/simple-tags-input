@@ -1,4 +1,6 @@
 # simple-tags-input
+> Check the [CodePen examples](https://codepen.io/collection/KpWNGN) here.
+
 Simple and extremely easy tags input for anything that runs on browser 🌐 🚀
 
 ## Quick start
