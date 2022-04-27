@@ -46,7 +46,7 @@ Simple and extremely easy tags input for anything that runs on browser 🌐 🚀
 ```
 ## Usage
 ### Simple usecase
-> Check the [example code here](./example/simple-demo.html) or check the [codepen example](https://codepen.io/rk4bir/pen/wvpVKEz).
+> Check the [codepen example](https://codepen.io/rk4bir/pen/wvpVKEz).
 ```html
 <!--HTML code-->
 <div>
@@ -77,7 +77,7 @@ tagsInput.getTags();
 
 
 ### Autocomplete search usecase
-> Check the [example code here](./example/autocomplete-demo.html) or check the [codepen example](https://codepen.io/rk4bir/pen/QWaejYg).
+> Check the [codepen example](https://codepen.io/rk4bir/pen/QWaejYg).
 ```html
 <!--HTML code-->
 <div>
