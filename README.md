@@ -4,11 +4,11 @@ Simple and extremely easy tags input for anything that runs on browser 🌐 🚀
 ## Quick start
 **Installation with CDN**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input/src/simple-tag-input.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input@latest/src/simple-tag-input.min.css">
 
 ...
 
-<script src="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input/src/simple-tag-input.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input@latest/src/simple-tag-input.min.js"></script>
 ```
 
 **Quick start html example**
@@ -20,7 +20,7 @@ Simple and extremely easy tags input for anything that runs on browser 🌐 🚀
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Simple tags input style-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input/src/simple-tag-input.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input@latest/src/simple-tag-input.min.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@ Simple and extremely easy tags input for anything that runs on browser 🌐 🚀
     </div>
 
     <!--Simple tags input plugin-->
-     <script src="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input/src/simple-tag-input.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/rk4bir/simple-tags-input@latest/src/simple-tag-input.min.js"></script>
      <!--Simple tags input implementation-->
      <script>
          let options = { inputEl: "tagsInput", listEl: "tagsList"};
