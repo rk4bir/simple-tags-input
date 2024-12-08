@@ -26,13 +26,8 @@
     background: #dfdfdf;
     justify-content: center;
 }
-.tagsList input{
-    flex: 1;
-    font-size: 14px;
-    background: transparent;
-}
 
-.simple-tags-input-search-list {
+.tagsAutocompleteList {
     position: relative;
     padding-left: 0px;
     border: 1px solid lightgrey;
@@ -40,14 +35,22 @@
     max-height: 200px;
     overflow-y: auto;
 }
-.simple-tags-input-search-list li{
+.tagsAutocompleteList li{
     list-style: none;
     border-bottom: 1px solid lightgrey;
     padding: 5px;
     cursor: pointer;
 }
 
-.simple-tags-input-search-list li:hover {
+.tagsAutocompleteList li:hover {
     background: #f5f5f5;
     font-weight: 600;
+}
+
+.tagsAutocompleteListHeader {
+    border-bottom: 1px solid lightgrey; 
+    margin-bottom: 0px; 
+    font-weight: bold; 
+    padding: 5px; 
+    font-style: italic 
 }
