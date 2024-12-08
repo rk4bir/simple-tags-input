@@ -1,9 +1,23 @@
 # js-input-tags
-> Check the CodePen.io [basic example](https://codepen.io/mindflowgo/pen/PwYNQVe); [autocomplete example](https://codepen.io/mindflowgo/pen/MYgyVgg).
+**Check the CodePen.io [basic example](https://codepen.io/mindflowgo/pen/PwYNQVe); [autocomplete example](https://codepen.io/mindflowgo/pen/MYgyVgg).**
 
-**Project objective: simple but powerful vanilla ES6 javascript (code: 250 lines) input tag generator for any input fields; with auto-completion lists.**
+*Project objective: simple but powerful vanilla ES6 javascript (code: 250 lines) input tag generator for any input fields; with auto-completion lists.*
 
-Based off the inspiration work of [github.com/rk4bir/simple-tags-input](https://github.com/rk4bir/simple-tags-input); however, aside from CSS, it has been fully rewritten and extended for more use cases (handling meta-keys in my case).
+Based off the inspiration work of [github.com/rk4bir/simple-tags-input](https://github.com/rk4bir/simple-tags-input); using his idea and CSS but then rewritten for ES6 and more features. Can record special keys (Meta, Alt, Tab, etc) as key presses.
+
+## Demo
+![demonstration](./example/media/autocomplete.gif)
+
+## Options
+- **tags**: can prep-populate tags (*Array*)
+- **inputId**: element-id of INPUT element to use (*String*)
+- **listId**: element-id of UL list element to use (*String*)
+- **outputId**: element-id of where to store the generated tag list (ex. hidden input) (*String*, optional)
+- **updateFn**: function to call after change to tags (*Function*, optional)
+- **unique**: require tags to be unique (*Boolean*)
+- **delimiter**: normally comma to separate items but alternative possible (*Char*)
+- **specialKeys**: enable tracking special keys (*Boolean*)
+- **autocompleteList**: autocomplete list suggestions (*Array*)
 
 ## Usage
 There are 3 steps to using it
@@ -15,7 +29,6 @@ That's it!
 
 ### BASIC Example
 > Check the [CodePen.io example](https://codepen.io/mindflowgo/pen/PwYNQVe).
-![demonstration](./example/media/autocomplete.gif)
 
 #### Step 1 - Include Files (change path to match where they are)
 ```html
@@ -54,7 +67,7 @@ That's it!
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <!-- Only CSS used by InputTags -->
-    <link rel="stylesheet" href="../src/input-tags.min.css">
+    <link rel="stylesheet" href="../src/style.css">
 </head>
 
 <body>
@@ -80,7 +93,7 @@ That's it!
 
      <!--Simple tags input implementation-->
      <script type="module">
-        import InputTags from "../src/input-tags.min.js"
+        import InputTags from "../src/index.js"
 
         function displayTags( _tags ){
             console.log( `[displayTags] called, with tags: ${_tags}` );
@@ -109,11 +122,11 @@ That's it!
 #### Step 1 - Include Files (change path to match where they are)
 ```html
     <head>
-        <link rel="stylesheet" href="input-tags.min.css">
+        <link rel="stylesheet" href="../src/style.css">
     </head>
 
     <script type="module">
-    import InputTags from "input-tags.min.js"
+    import InputTags from "../src/index.js"
     </script>
 ```
 
