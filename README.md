@@ -1,4 +1,4 @@
-# input-tags
+# js-input-tags
 > Check the CodePen.io [basic example](https://codepen.io/mindflowgo/pen/PwYNQVe); [autocomplete example](https://codepen.io/mindflowgo/pen/MYgyVgg).
 
 **Project objective: simple but powerful vanilla ES6 javascript (code: 250 lines) input tag generator for any input fields; with auto-completion lists.**
