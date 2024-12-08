@@ -1,0 +1,28 @@
+{
+  "name": "js-input-tags",
+  "version": "1.0.0",
+  "description": "Simple vanilla javascript input-tags creator, with autocomplete.",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mindflowgo/js-input-tags.git"
+  },
+  "keywords": [
+    "input",
+    "tags",
+    "es6",
+    "autocomplete"
+  ],
+  "author": "Filipe Laborde-Basto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mindflowgo/js-input-tags/issues"
+  },
+  "homepage": "https://github.com/mindflowgo/js-input-tags#readme"
+}
