@@ -1,5 +1,5 @@
 // Utility function
-function simpleTag(e, type, name, tagValue) {
+function simpleTag(e, type, bridgeId, tagValue) {
     if (!e) return;
 
     // Creates event for the tag add/remove
@@ -8,7 +8,7 @@ function simpleTag(e, type, name, tagValue) {
         cancelable: true,
         detail: { type, tagValue, element: e.target }
     };
-    const event = new CustomEvent(name, eventOptions);
+    const event = new CustomEvent(`__${bridgeId}_`, eventOptions);
     document.dispatchEvent(event);
 }
 
@@ -18,7 +18,7 @@ function simpleTag(e, type, name, tagValue) {
         this.searchItems = [];
         this.input = undefined;
         this.ul = undefined;
-        this.bridgeID = Math.random().toString(29).substring(2) + new Date().getTime().toString() + Math.random().toString(29).substring(2);
+        this.bridgeID = undefined;
         this.searchListEl = undefined;
         this.settings = (arguments[0] && typeof arguments[0] === 'object') ? arguments[0] : {};
 
@@ -26,7 +26,7 @@ function simpleTag(e, type, name, tagValue) {
         if (setPluginParams.call(this)) {
             this.input.addEventListener("keydown", addTag.bind(this));
             createSearchListElElement.call(this);
-            document.addEventListener(this.bridgeID, handleOutsidePluginTasks.bind(this));
+            document.addEventListener(`__${this.bridgeID}_`, handleOutsidePluginTasks.bind(this));
             createTag.call(this);
         } else {
             throw new Error("simpleTagsInput: input or list element not found");
@@ -73,6 +73,7 @@ function simpleTag(e, type, name, tagValue) {
 
             if (_input.tagName == "INPUT" && _ul.tagName == "UL") {
                 this.input = _input;
+                this.bridgeID = listEl;
                 this.ul = _ul;
                 this.ul.classList.add("tagsList");
                 return true;
@@ -86,10 +87,10 @@ function simpleTag(e, type, name, tagValue) {
 
     function createSearchListElElement() {
         // create search list `ul` element and set to `this.searchListEl`
-        const random_id = Math.random().toString(30).substring(2);
-        const el = `<ul id="${random_id}" class='simple-tags-input-search-list' style='display: none'></ul>`
+        const autocomplete_id = this.bridgeID + '_autocomplete';
+        const el = `<ul id="${autocomplete_id}" class='simple-tags-input-search-list' style='display: none'></ul>`
         this.input.insertAdjacentHTML("afterend", el);
-        this.searchListEl = document.getElementById(random_id);
+        this.searchListEl = document.getElementById(autocomplete_id);
     }
 
     function createTag() {
@@ -126,7 +127,7 @@ function simpleTag(e, type, name, tagValue) {
         /* Handles auto complete search */
         const q = e.target.value;
         const results = this.searchItems.filter(item => item.toLowerCase().indexOf(q.toLowerCase()) != -1)
-        let _html = "<p style='border-bottom: 1px solid lightgrey; margin-bottom: 0px; font-weight: bold; padding: 5px; font-style: italic '>Search Result:</p>";
+        let _html = "<p class='simple-tags-input-search-header'>Search Result:</p>";
         results.forEach(item => {
             _html += `<li onclick="simpleTag(event,'addTag','${this.bridgeID}','${item}')">${item}</li>`;
         });
@@ -145,6 +146,17 @@ function simpleTag(e, type, name, tagValue) {
         if (type == "removeTag") removeTagFromOutside.call(this, element, tagValue);
     }
 
+    simpleTagsInput.prototype.addTag = function (value) {
+        /* Add a new tag to the list */
+        const tag = value.replace(/\s+/g, '');
+        if (tag.length > 1 && !this.tags.includes(tag)) {
+            tag.split(',').forEach(tag => {
+                this.tags.push(tag);
+                createTag.call(this);
+            });
+        }
+    }
+    
     function addTagFromOutside(tag) {
         /* Add tag from outside of the plugin via event */
         this.input.value = "";
