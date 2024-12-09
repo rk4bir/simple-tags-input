@@ -145,18 +145,7 @@ function simpleTag(e, type, bridgeId, tagValue) {
         if (type == "addTag") addTagFromOutside.call(this, tagValue);
         if (type == "removeTag") removeTagFromOutside.call(this, element, tagValue);
     }
-
-    simpleTagsInput.prototype.addTag = function (value) {
-        /* Add a new tag to the list */
-        const tag = value.replace(/\s+/g, '');
-        if (tag.length > 1 && !this.tags.includes(tag)) {
-            tag.split(',').forEach(tag => {
-                this.tags.push(tag);
-                createTag.call(this);
-            });
-        }
-    }
-    
+ 
     function addTagFromOutside(tag) {
         /* Add tag from outside of the plugin via event */
         this.input.value = "";
