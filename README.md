@@ -119,3 +119,28 @@ tagsInput.getTags();
 > Autocomplete usecase demo
 
 ![basic-demo](./example/media/autocomplete-demo.gif)
+
+---
+
+## Contributors
+> Thanks to these wonderful people for contributing to this project:
+
+<ul style="display: flex; list-style: none; padding: 0; gap: 10px;">
+    <a href="https://github.com/rk4bir" target="_blank">
+        <img 
+            style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover;" 
+            src="https://avatars.githubusercontent.com/u/25036102?v=4" 
+            alt="rk4bir's avatar"
+        />
+    </a>
+    <a style="margin-left: 20px" href="https://github.com/mindflowgo" target="_blank">
+        <img 
+            style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover;" 
+            src="https://avatars.githubusercontent.com/u/908459?v=4" 
+            alt="mindflowgo's avatar"
+        />
+    </a>
+</ul>
+
+
+
